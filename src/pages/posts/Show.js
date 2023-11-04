@@ -38,7 +38,7 @@ function Show() {
             <div className="row text-center justify-content-center">
                 {error && <div className="col-12"><div className="alert alert-danger">{error}</div></div>}
                 {post &&
-                    <div className="col-4">
+                    <div className="col-lg-4">
                         <div className="card">
                             <div className="card-header">{post.title}</div>
                             <ul className="list-group list-group-flush">

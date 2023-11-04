@@ -1,9 +1,10 @@
-import { CREATE, DELETE, ERROR, LOADING, SET, UPDATE } from "./actionTypse"
+import { CREATE, DELETE, ERROR, ID, LOADING, SET, UPDATE } from "./actionTypse"
 
 const initialState = {
     tasks: localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [],
     loading: false,
-    error: null
+    error: null,
+    id: 200
 }
 
 function updateLocalStorage(state) {
@@ -48,6 +49,11 @@ function tasksReducer(state = initialState, action) {
             return {
                 ...state,
                 error: action.payload
+            }
+        case ID:
+            return {
+                ...state,
+                id: state.id + 1
             }
         default:
             return state

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CREATE, DELETE, ERROR, LOADING, SET, UPDATE } from "./actionTypse";
+import { CREATE, DELETE, ERROR, ID, LOADING, SET, UPDATE } from "./actionTypse";
 
 export function fetchTasks() {
     return async function (dispatch) {
@@ -76,6 +76,12 @@ export function deleteTask(id) {
     return {
         type: DELETE,
         payload: id
+    }
+}
+
+export function setId() {
+    return {
+        type: ID
     }
 }
 
